@@ -24,12 +24,6 @@ class ClientTask(threading.Thread):
         print('Client %s started' % (identity))
         poll = zmq.Poller()
         poll.register(socket, zmq.POLLIN)
-        #reqs = 0
-        #while True:
-            #reqs = reqs + 1
-            #print('Req #%d sent..' % (reqs))
-            #socket.send_string(u'request #%d' % (reqs))
-		#socket.send_string(u'request #%d' % (reqs))
 	socket.send_string("Blah")
 	for i in range(5):
 		sockets = dict(poll.poll(1000))
